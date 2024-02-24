@@ -15,7 +15,8 @@ It is the only way to recover your account if you ever forget your password.
 spike warm earth way ordinary flavor essence leisure resource decide scan wet city yellow enforce chest open crime write van rookie poet draw three
 ```
 
-
+# Add keys to Hermes
+```
 hermes --config $HERMES_CONFIG keys add --chain shielded-expedition.88f17d1d14 --key-file $HOME/.local/share/namada/shielded-expedition.88f17d1d14/wallet.toml 
 2024-02-24T05:43:58.083589Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
 Enter your decryption password: 
@@ -25,6 +26,7 @@ echo "spike warm earth way ordinary flavor essence leisure resource decide scan 
 hermes --config $HERMES_CONFIG keys add --chain osmo-test-5 --mnemonic-file ./mnemonic
 2024-02-24T05:44:50.972361Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
 SUCCESS Restored key 'cybernova_osmos_acc' (osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05) on chain osmo-test-5
+```
 
 hermes --config $HERMES_CONFIG \
   create channel \
