@@ -104,3 +104,11 @@ SUCCESS Channel {
     },
     connection_delay: 0ns,
 }
+
+amadac balance --owner cybernova_se_acc --node $RPC
+naan: 1184.487509
+
+osmosisd query bank balances osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
+balances:
+- amount: "199988273"
+  denom: uosmo
