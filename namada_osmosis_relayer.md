@@ -16,6 +16,8 @@ spike warm earth way ordinary flavor essence leisure resource decide scan wet ci
 ```
 
 # Add keys to Hermes
+export HERMES_CONFIG=$HOME/.hermes/config.toml  
+
 hermes --config $HERMES_CONFIG keys add --chain shielded-expedition.88f17d1d14 --key-file $HOME/.local/share/namada/shielded-expedition.88f17d1d14/wallet.toml 
 ```
 2024-02-24T05:43:58.083589Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
@@ -29,7 +31,8 @@ hermes --config $HERMES_CONFIG keys add --chain osmo-test-5 --mnemonic-file ./mn
 2024-02-24T05:44:50.972361Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
 SUCCESS Restored key 'cybernova_osmos_acc' (osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05) on chain osmo-test-5
 ```
-
+# Configure Hermes
+```
 hermes --config $HERMES_CONFIG \
   create channel \
   --a-chain shielded-expedition.88f17d1d14 \
@@ -111,7 +114,9 @@ SUCCESS Channel {
     },
     connection_delay: 0ns,
 }
-
+```
+# Test IBC transfer token back and forth
+```
 namadac balance --owner cybernova_se_acc --node $RPC
 naan: 1184.487509
 
@@ -119,15 +124,20 @@ osmosisd query bank balances osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
 balances:
 - amount: "199988273"
   denom: uosmo
+```
 
-namadac --base-dir $HOME/.local/share/namada \
+- Send naan to osmos via channel-344
+export BASE_DIR=$HOME/.local/share/namada  
+export LEDGER="http://37.60.238.210:26657"
+```
+namadac --base-dir $BASE_DIR \
     ibc-transfer \
     --amount 2 \
     --source cybernova_se_acc \
     --receiver osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05 \
     --token naan \
     --channel-id channel-344 \
-    --node http://37.60.238.210:26657 \
+    --node $LEDGER \
     --memo tpknam1qzf3c3csf6x68tjemcjnwxyummcevds7647kx5fy0w2k0wkl962evjxv08k
 Enter your decryption password: 
 Transaction added to mempool.
@@ -136,7 +146,8 @@ Inner transaction hash: DE16681AE05D43598028ED52101B0FEF793B9DAF91A70B3D21774294
 Wrapper transaction accepted at height 53680. Used 26 gas.
 Waiting for inner transaction result...
 Transaction was successfully applied at height 53681. Used 6193 gas
-
+```
+```
 osmosisd query bank balances osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
 balances:
 - amount: "2"
