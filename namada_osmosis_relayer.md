@@ -133,7 +133,7 @@ balances:
   denom: uosmo
 ```
 
-- Send naan to osmos via channel-344  
+## Send naan to osmos via channel-344  
 export BASE_DIR=$HOME/.local/share/namada  
 export LEDGER="http://37.60.238.210:26657"
 ```
@@ -162,7 +162,8 @@ balances:
 - amount: "199988273"
   denom: uosmo
 ```
-- Send uosmo to Namada via channel-5857  
+
+## Send uosmo to Namada via channel-5857  
 ```
 osmosisd tx ibc-transfer transfer \
   transfer \
