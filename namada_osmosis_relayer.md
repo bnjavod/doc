@@ -123,8 +123,10 @@ SUCCESS Channel {
 }
 ```
 # Test IBC transfer token back and forth
+export BASE_DIR=$HOME/.local/share/namada   
+export LEDGER="http://37.60.238.210:26657"
 ```
-namadac balance --owner cybernova_se_acc --node $RPC
+namadac balance --owner cybernova_se_acc --node $LEDGER
 naan: 1184.487509
 
 osmosisd query bank balances osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
@@ -134,8 +136,6 @@ balances:
 ```
 
 ## Send naan to osmos via channel-344  
-export BASE_DIR=$HOME/.local/share/namada  
-export LEDGER="http://37.60.238.210:26657"
 ```
 namadac --base-dir $BASE_DIR \
     ibc-transfer \
@@ -180,7 +180,7 @@ osmosisd tx ibc-transfer transfer \
   --yes
 ```
 ```
-namadac balance --owner cybernova_se_acc --node $RPC
+namadac balance --owner cybernova_se_acc --node $LEDGER
 naan: 1179.987509
 transfer/channel-344/uosmo: 1000000
 ```
