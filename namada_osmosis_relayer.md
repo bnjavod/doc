@@ -1,3 +1,5 @@
+**Task: SUBCLASS Operating IBC/ Interoperability infrastructure - Operate a Shielded Expedition-compatible Osmosis testnet relayer**
+
 IBC Relayer is created for Namada SE testnet and Osmosis testnet, which can transfer tokens back and forth successfully.
 
     
