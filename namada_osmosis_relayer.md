@@ -154,7 +154,9 @@ balances:
   denom: ibc/2E5FBCB19E00000135A4BF3BC1BB67E34F3494193448D6A3DCE45278A4AB03EF
 - amount: "199988273"
   denom: uosmo
-
+```
+- Send uosmo to Namada via channel-5857  
+```
 osmosisd tx ibc-transfer transfer \
   transfer \
   channel-5857 \
@@ -168,7 +170,9 @@ osmosisd tx ibc-transfer transfer \
   --home $HOME/.osmosisd \
   --chain-id osmo-test-5 \
   --yes
-
+```
+```
 namadac balance --owner cybernova_se_acc --node $RPC
 naan: 1179.987509
 transfer/channel-344/uosmo: 1000000
+```
