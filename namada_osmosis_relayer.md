@@ -194,6 +194,9 @@ SUCCESS Channel {
     connection_delay: 0ns,
 }
 ```
+# Start Hermes
+hermes --config $HERMES_CONFIG start
+
 # Test IBC transfer token back and forth
 export BASE_DIR=$HOME/.local/share/namada   
 export LEDGER="http://37.60.238.210:26657"  
