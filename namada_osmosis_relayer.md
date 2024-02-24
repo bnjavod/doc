@@ -1,8 +1,12 @@
-IBC Relayer is created for Namada SE testnet and Osmosis testnet, which can transfer tokens back and forth successfull.
- 
-"Namada SE testnet" - "osmo-test-5"
-"channel-344" - "channel-5857"
+IBC Relayer is created for Namada SE testnet and Osmosis testnet, which can transfer tokens back and forth successfully.
 
+    
+| Namada SE | Osmosis Test |
+|-----------------|------------------|
+|shielded-expedition.88f17d1d14|osmo-test-5| 
+| channel-344     | channel-5857 |  
+ 
+-----
 # Prepare test accounts:
 ```
 namadaw derive --alias cybernova_se_acc
