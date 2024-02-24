@@ -1,8 +1,9 @@
+# Prepare test accounts:
+`namadaw derive --alias cybernova_se_acc`  
 
+```
 osmosisd keys add cybernova_osmos_acc
-Enter keyring passphrase (attempt 1/3):
-
-- address: osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
+  address: osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
   name: cybernova_osmos_acc
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A5XfS7Oc+zoYeFspvDRaP7J3HrHpZ++2jBQSCtvQsTht"}'
   type: local
@@ -11,8 +12,8 @@ Enter keyring passphrase (attempt 1/3):
 It is the only way to recover your account if you ever forget your password.
 
 spike warm earth way ordinary flavor essence leisure resource decide scan wet city yellow enforce chest open crime write van rookie poet draw three
+```
 
-namadaw derive --alias cybernova_se_acc
 
 hermes --config $HERMES_CONFIG keys add --chain shielded-expedition.88f17d1d14 --key-file $HOME/.local/share/namada/shielded-expedition.88f17d1d14/wallet.toml 
 2024-02-24T05:43:58.083589Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
