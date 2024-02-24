@@ -6,8 +6,10 @@ Enter keyring passphrase (attempt 1/3):
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A5XfS7Oc+zoYeFspvDRaP7J3HrHpZ++2jBQSCtvQsTht"}'
   type: local
 
-
 **Important** write this mnemonic phrase in a safe place.
 It is the only way to recover your account if you ever forget your password.
 
 spike warm earth way ordinary flavor essence leisure resource decide scan wet city yellow enforce chest open crime write van rookie poet draw three
+
+namadaw derive --alias cybernova_se_acc
+
