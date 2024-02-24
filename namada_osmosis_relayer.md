@@ -194,8 +194,28 @@ SUCCESS Channel {
     connection_delay: 0ns,
 }
 ```
-# Start Hermes
-hermes --config $HERMES_CONFIG start
+# Create Hermes service and start it
+```
+sudo tee /usr/lib/systemd/user/hermesd.service > /dev/null <<EOF
+[Unit]
+Description=Hermes Daemon Service
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=20
+ExecStart=/usr/local/bin/hermes --config $HOME/.hermes/config.toml start 
+
+[Install]
+WantedBy=default.target
+EOF
+```
+systemctl --user daemon-reload  
+systemctl --user enable hermesd  
+systemctl --user start hermesd
 
 # Test IBC transfer token back and forth
 export BASE_DIR=$HOME/.local/share/namada   
