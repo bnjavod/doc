@@ -21,10 +21,82 @@ It is the only way to recover your account if you ever forget your password.
 
 spike warm earth way ordinary flavor essence leisure resource decide scan wet city yellow enforce chest open crime write van rookie poet draw three
 ```
+# Install Hermes
+```
+export TAG="v1.7.4-namada-beta7"
+export ARCH="x86_64-unknown-linux-gnu" # or "aarch64-apple-darwin"
+curl -Lo /tmp/hermes.tar.gz https://github.com/heliaxdev/hermes/releases/download/${TAG}/hermes-${TAG}-${ARCH}.tar.gz
+tar -xvzf /tmp/hermes.tar.gz -C /usr/local/bin
+```
+# Configure Hermes
+export HERMES_CONFIG=$HOME/.hermes/config.toml  
+mkdir $HOME/.hermes  
+```
+sudo tee $HERMES_CONFIG > /dev/null <<EOF
+[global]
+log_level = 'info'
+ 
+[mode]
+
+[mode.clients]
+enabled = true
+refresh = true
+misbehaviour = true
+
+[mode.connections]
+enabled = false
+
+[mode.channels]
+enabled = false
+
+[mode.packets]
+enabled = true
+clear_interval = 10
+clear_on_start = false
+tx_confirmation = true
+
+[telemetry]
+enabled = false
+host = '127.0.0.1'
+port = 3001
+
+[[chains]]
+id = 'shielded-expedition.88f17d1d14' 
+type = 'Namada'
+rpc_addr = 'http://37.60.238.210:26657'  # Cybernova RPC server
+grpc_addr = 'http://37.60.238.210:9090' 
+event_source = { mode = 'push', url = 'ws://37.60.238.210:26657/websocket', batch_delay = '500ms' } 
+account_prefix = ''
+key_name = 'cybernova_se_acc' 
+store_prefix = 'ibc'
+gas_price = { price = 0.0001, denom = 'tnam1qxvg64psvhwumv3mwrrjfcz0h3t3274hwggyzcee' } 
+rpc_timeout = '30s'
+
+[[chains]]
+id = 'osmo-test-5'
+type = 'CosmosSdk'
+rpc_addr = 'http://127.0.0.1:26657'  # Osmosis full node locally
+grpc_addr = 'http://127.0.0.1:9090'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_delay = '500ms' } 
+account_prefix = 'osmo'
+key_name = 'cybernova_osmos_acc'
+address_type = { derivation = 'cosmos' }
+store_prefix = 'ibc'
+default_gas = 400000
+max_gas = 120000000
+gas_price = { price = 0.0025, denom = 'uosmo' }
+gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 1800000
+clock_drift = '15s'
+max_block_time = '30s'
+trusting_period = '4days'
+trust_threshold = { numerator = '1', denominator = '3' }
+rpc_timeout = '30s'
+EOF
+```
 
 # Add keys to Hermes
-export HERMES_CONFIG=$HOME/.hermes/config.toml  
-
 hermes --config $HERMES_CONFIG keys add --chain shielded-expedition.88f17d1d14 --key-file $HOME/.local/share/namada/shielded-expedition.88f17d1d14/wallet.toml 
 ```
 2024-02-24T05:43:58.083589Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
@@ -38,7 +110,7 @@ hermes --config $HERMES_CONFIG keys add --chain osmo-test-5 --mnemonic-file ./mn
 2024-02-24T05:44:50.972361Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
 SUCCESS Restored key 'cybernova_osmos_acc' (osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05) on chain osmo-test-5
 ```
-# Configure Hermes
+# Create IBC relayer channel
 ```
 hermes --config $HERMES_CONFIG \
   create channel \
