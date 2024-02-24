@@ -7,6 +7,7 @@ IBC Relayer is created for Namada SE testnet and Osmosis testnet, which can tran
 |-|-----------------|------------------|
 |Chain-ID|shielded-expedition.88f17d1d14|osmo-test-5| 
 |Channel| channel-344     | channel-5857 |  
+|RPC|37.60.238.210:26657|127.0.0.1:26657|
  
 -----
 # Prepare test accounts:
