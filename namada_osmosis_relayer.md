@@ -1,6 +1,13 @@
 # Prepare test accounts:
 ```
 namadaw derive --alias cybernova_se_acc
+namadaw find --alias cybernova_se_acc
+Found transparent keys:
+  Alias "cybernova_se_acc" (encrypted):
+    Public key hash: 8AF84A68C99542AD81F9B4E0A3AAF29597B59E6E
+    Public key: tpknam1qzf3c3csf6x68tjemcjnwxyummcevds7647kx5fy0w2k0wkl962evjxv08k
+Found transparent address:
+  "cybernova_se_acc": Implicit: tnam1qz90sjngex259tvplx6wpga2722e0dv7dcr9xlzu
 ```  
 ```
 osmosisd keys add cybernova_osmos_acc
