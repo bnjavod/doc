@@ -126,7 +126,7 @@ balances:
   denom: uosmo
 ```
 
-- Send naan to osmos via channel-344
+- Send naan to osmos via channel-344  
 export BASE_DIR=$HOME/.local/share/namada  
 export LEDGER="http://37.60.238.210:26657"
 ```
