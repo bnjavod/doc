@@ -129,3 +129,12 @@ Inner transaction hash: DE16681AE05D43598028ED52101B0FEF793B9DAF91A70B3D21774294
 Wrapper transaction accepted at height 53680. Used 26 gas.
 Waiting for inner transaction result...
 Transaction was successfully applied at height 53681. Used 6193 gas
+
+osmosisd query bank balances osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
+balances:
+- amount: "2"
+  denom: ibc/2E5FBCB19E00000135A4BF3BC1BB67E34F3494193448D6A3DCE45278A4AB03EF
+- amount: "199988273"
+  denom: uosmo
+
+
