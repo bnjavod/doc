@@ -213,6 +213,7 @@ ExecStart=/usr/local/bin/hermes --config $HOME/.hermes/config.toml start
 WantedBy=default.target
 EOF
 ```
+sudo chmod 755 /usr/lib/systemd/user/hermesd.service
 systemctl --user daemon-reload  
 systemctl --user enable hermesd  
 systemctl --user start hermesd
