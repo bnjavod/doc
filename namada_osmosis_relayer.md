@@ -124,7 +124,7 @@ SUCCESS Channel {
 ```
 # Test IBC transfer token back and forth
 export BASE_DIR=$HOME/.local/share/namada   
-export LEDGER="http://37.60.238.210:26657"
+export LEDGER="http://37.60.238.210:26657"  
 ```
 namadac balance --owner cybernova_se_acc --node $LEDGER
 naan: 1184.487509
