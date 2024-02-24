@@ -1,3 +1,4 @@
+
 osmosisd keys add cybernova_osmos_acc
 Enter keyring passphrase (attempt 1/3):
 
