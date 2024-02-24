@@ -112,3 +112,20 @@ osmosisd query bank balances osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
 balances:
 - amount: "199988273"
   denom: uosmo
+
+namadac --base-dir $HOME/.local/share/namada \
+    ibc-transfer \
+    --amount 2 \
+    --source cybernova_se_acc \
+    --receiver osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05 \
+    --token naan \
+    --channel-id channel-344 \
+    --node http://37.60.238.210:26657 \
+    --memo tpknam1qzf3c3csf6x68tjemcjnwxyummcevds7647kx5fy0w2k0wkl962evjxv08k
+Enter your decryption password: 
+Transaction added to mempool.
+Wrapper transaction hash: BEF96B148C902C8A6376716936DB14F148C7DA2C38B2347E80A89E4D00552FF6
+Inner transaction hash: DE16681AE05D43598028ED52101B0FEF793B9DAF91A70B3D217742945D9FDCFA
+Wrapper transaction accepted at height 53680. Used 26 gas.
+Waiting for inner transaction result...
+Transaction was successfully applied at height 53681. Used 6193 gas
