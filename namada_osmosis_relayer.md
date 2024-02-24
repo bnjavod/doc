@@ -1,6 +1,7 @@
 # Prepare test accounts:
-`namadaw derive --alias cybernova_se_acc`  
-
+```
+namadaw derive --alias cybernova_se_acc
+```  
 ```
 osmosisd keys add cybernova_osmos_acc
   address: osmo1je2sa8rd2l8u40a05cvyu3fqachuspqajhec05
