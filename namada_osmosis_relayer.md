@@ -1,3 +1,8 @@
+IBC Relayer is created for Namada SE testnet and Osmosis testnet, which can transfer tokens back and forth successfull.
+ 
+"Namada SE testnet" - "osmo-test-5"
+"channel-344" - "channel-5857"
+
 # Prepare test accounts:
 ```
 namadaw derive --alias cybernova_se_acc
@@ -21,7 +26,7 @@ It is the only way to recover your account if you ever forget your password.
 
 spike warm earth way ordinary flavor essence leisure resource decide scan wet city yellow enforce chest open crime write van rookie poet draw three
 ```
-# Install Hermes
+# Downloading Hermes
 ```
 export TAG="v1.7.4-namada-beta7"
 export ARCH="x86_64-unknown-linux-gnu" # or "aarch64-apple-darwin"
