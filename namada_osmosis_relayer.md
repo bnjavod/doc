@@ -292,3 +292,47 @@ namadac balance --owner cybernova_se_acc --node $LEDGER
 naan: 1179.987509
 transfer/channel-344/uosmo: 1000000
 ```
+# Update IBC relayer client
+```
+hermes update client --host-chain shielded-expedition.88f17d1d14 --client 07-tendermint-1187
+SUCCESS [
+    UpdateClient(
+        UpdateClient {
+            common: Attributes {
+                client_id: ClientId(
+                    "07-tendermint-1187",
+                ),
+                client_type: Tendermint,
+                consensus_height: Height {
+                    revision: 5,
+                    height: 5653286,
+                },
+            },
+            header: Some(
+                Tendermint(
+                     Header {...},
+                ),
+            ),
+        },
+    ),
+    UpdateClient(
+        UpdateClient {
+            common: Attributes {
+                client_id: ClientId(
+                    "07-tendermint-1700",
+                ),
+                client_type: Tendermint,
+                consensus_height: Height {
+                    revision: 0,
+                    height: 20479895,
+                },
+            },
+            header: Some(
+                Tendermint(
+                     Header {...},
+                ),
+            ),
+        },
+    ),
+]
+```
