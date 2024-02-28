@@ -1,14 +1,19 @@
 **Task: SUBCLASS Operating IBC/ Interoperability infrastructure - Operate a Shielded Expedition-compatible Osmosis testnet relayer**
 
 IBC Relayer is created for Namada SE testnet and Osmosis testnet, which can transfer tokens back and forth successfully.
-
     
 || Namada SE | Osmosis Test |
 |-|-----------------|------------------|
 |Chain-ID|shielded-expedition.88f17d1d14|osmo-test-5| 
 |Channel| channel-344     | channel-5857 |  
 |RPC|37.60.238.210:26657|127.0.0.1:26657|
+
  
+**Transaction links:**  
+[Create channel](https://testnet.mintscan.io/osmosis-testnet/txs/E568B14EE9F379370B96701CCB6DA91986F87A439F888468D76168BC3C6B2AB5?height=5591619)   
+[Transfer from osmos to namada](https://testnet.mintscan.io/osmosis-testnet/txs/DE825078A21A7C57790F7159C38130975A6CF5F88E9E6730112D13767372BF54?height=5591828)  
+[Received from namadas](https://testnet.mintscan.io/osmosis-testnet/txs/0E3F045D6980B332895ED324696D549589D223622EA6DED2352439CF05403948?height=5617053)  
+
 -----
 # Prepare test accounts:
 ```
